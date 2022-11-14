@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Bienvenida {% endblock%}
+{% block content %} aqui encontraras todo tipo de encomiendas 
+<section id="Quees" class="p-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md">
+          <img src='{% static "img/encomiendas.jpg" %}' class="img-fluid" alt="" />
+        </div>
+        <div class="col-md p-5 " style="border-style: solid; border-color: rgb(1,75,160); color: rgb(1,75,160);">
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Conserje
+                        <th>Remitente</th>
+                        <th>Destinatario</th>
+                        <th>nro_residencia</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                    <tr>
+                        <td>{{post.fechaRecepcion}}</td>
+                        <td>{{post.nombreConserje}}</td>
+                        <td>{{post.nombreRemitente}}</td>
+                        <td>{{post.nombreDestinatario}}</td>
+                        <td>{{post.id_Residencia.idResidencia}}</td>
+                        <td>{{post.estado}}</td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Cards --> 
+<div class="row">
+    <div class="row row-cols-1 text-center mt-5 mb-3 text-white">
+        <p>Informacion</p> 
+        <p>Informacion</p>  
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-dark">
+          <div class="card-header py-3 text-white bg-primary border-dark">
+            <h4 class="my-0 fw-normal">Acerca de</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>▸N.R. Encomiendas fue fundada por Kalule Melendez en 2022.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-dark">
+          <div class="card-header py-3 text-white bg-primary border-dark">
+            <h4 class="my-0 fw-normal">¿Qué es?</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>▸Empresa encomiendas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-dark">
+          <div class="card-header py-3 text-white bg-primary border-dark">
+            <h4 class="my-0 fw-normal">Contacto</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+            <li>▸nicolas.ramireza@usm.cl</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>          
+  </div>
+<!-- Footer -->
+<footer class="footer mt-auto py-3 bg-primary text-center">
+
+    <div class="container">
+      <span class=" text-white">N.R. ENCOMIENDAS © <script>document.write(new Date().getFullYear())</script> </span>
+    </div>
+
+  </footer>
+{% endblock %}
